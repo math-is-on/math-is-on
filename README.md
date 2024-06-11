@@ -1,5 +1,6 @@
-## Hi there 👋
+# Wow! So Github!
 
+Need a place for my projects, so here we are.
 <!--
 **math-is-on/math-is-on** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
 
