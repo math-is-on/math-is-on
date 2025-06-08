@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dr. Chase Mathison - Assistant Professor of Mathematics</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts - Inter -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* Apply Inter font globally and ensure a smooth transition for button hovers */
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f3f4f6; /* Light gray background */
+        }
+        /* Custom styles for page content sections */
+        .page-content {
+            display: none; /* Hidden by default */
+            animation: fadeIn 0.5s ease-in-out; /* Smooth fade-in effect */
+        }
+        .page-content.active {
+            display: block; /* Shown when active */
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        /* Basic styling for MathJax rendered equations */
+        .MathJax {
+            overflow-x: auto; /* Allow horizontal scrolling for wide equations */
+            padding-bottom: 5px; /* Space for scrollbar */
+        }
+    </style>
+</head>
+<body class="min-h-screen flex flex-col">
+    <!-- Navbar -->
+    <nav class="bg-gray-800 p-4 shadow-lg rounded-b-lg">
+        <div class="container mx-auto flex flex-wrap justify-between items-center">
+            <!-- Site Title -->
+            <h1 class="text-white text-2xl font-bold mb-2 sm:mb-0">
+                Dr. [Your Name Here]
+            </h1>
+
+            <!-- Navigation Links -->
+            <div class="flex flex-wrap gap-2 sm:gap-4">
+                <button onclick="showPage('home')" class="nav-button px-4 py-2 rounded-lg transition-all duration-300 ease-in-out text-gray-300 hover:bg-gray-700 hover:text-white">
+                    Home
+                </button>
+                <button onclick="showPage('teaching')" class="nav-button px-4 py-2 rounded-lg transition-all duration-300 ease-in-out text-gray-300 hover:bg-gray-700 hover:text-white">
+                    Teaching
+                </button>
+                <button onclick="showPage('research')" class="nav-button px-4 py-2 rounded-lg transition-all duration-300 ease-in-out text-gray-300 hover:bg-gray-700 hover:text-white">
+                    Research
+                </button>
+                <button onclick="showPage('cv')" class="nav-button px-4 py-2 rounded-lg transition-all duration-300 ease-in-out text-gray-300 hover:bg-gray-700 hover:text-white">
+                    CV
+                </button>
+                <button onclick="showPage('personal')" class="nav-button px-4 py-2 rounded-lg transition-all duration-300 ease-in-out text-gray-300 hover:bg-gray-700 hover:text-white">
+                    Personal
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main content area -->
+    <main class="flex-grow container mx-auto p-4 sm:p-6 lg:p-8">
+        <!-- Home Page -->
+        <div id="home-page" class="page-content active p-6 md:p-8 lg:p-10 bg-white rounded-lg shadow-md">
+            <h2 class="text-3xl font-semibold text-gray-800 mb-6 border-b-2 border-blue-600 pb-2">
+                Welcome to My Academic Hub
+            </h2>
+            <p class="text-gray-700 leading-relaxed mb-6 text-lg">
+                Hello! I'm a Professor of Mathematics with a passion for [mention broad area, e.g., applied analysis, number theory, mathematical physics]. This site serves as a central point for my academic activities, including my research, teaching materials, and professional updates.
+            </p>
+
+            <div class="space-y-8">
+                <!-- Blog Post 1 -->
+                <article class="border-b pb-6 last:border-b-0">
+                    <h3 class="text-2xl font-bold text-gray-800 mb-2">
+                        Reflections on the Interplay of Pure and Applied Mathematics
+                    </h3>
+                    <p class="text-sm text-gray-500 mb-3">
+                        Published: June 7, 2025
+                    </p>
+                    <p class="text-gray-700 leading-relaxed">
+                        The distinction between pure and applied mathematics often blurs in fascinating ways. Recently, I've been pondering how advancements in abstract algebra, seemingly removed from real-world applications, frequently find unexpected utility in fields like cryptography or quantum computing. This dynamic interplay is what continues to drive my curiosity and research direction. More to come on this thought...
+                    </p>
+                </article>
+
+                <!-- Blog Post 2 -->
+                <article class="border-b pb-6 last:border-b-0">
+                    <h3 class="text-2xl font-bold text-gray-800 mb-2">
+                        Upcoming Conference: Insights into Non-Linear Dynamics
+                    </h3>
+                    <p class="text-sm text-gray-500 mb-3">
+                        Published: May 20, 2025
+                    </p>
+                    <p class="text-gray-700 leading-relaxed">
+                        I'm looking forward to presenting my latest work on chaotic systems at the upcoming International Conference on Non-Linear Dynamics. My talk will focus on the stability analysis of certain dynamical models and their implications for predicting complex behaviors. I'll share a summary and any key takeaways here after the conference.
+                    </p>
+                </article>
+            </div>
+        </div>
+
+        <!-- Teaching Page -->
+        <div id="teaching-page" class="page-content p-6 md:p-8 lg:p-10 bg-white rounded-lg shadow-md">
+            <h2 class="text-3xl font-semibold text-gray-800 mb-6 border-b-2 border-blue-600 pb-2">
+                Teaching
+            </h2>
+
+            <section class="mb-8">
+                <h3 class="text-2xl font-bold text-gray-800 mb-4">
+                    Current Courses
+                </h3>
+                <ul class="list-disc list-inside text-gray-700 leading-relaxed space-y-2">
+                    <li>
+                        **MA 301 - Real Analysis I (Fall 2025)**
+                        <p class="text-sm text-gray-600 ml-4">
+                            An introduction to the rigorous foundations of real analysis, including sequences, series, continuity, differentiation, and integration.
+                            [<a href="#" class="text-blue-600 hover:underline">Syllabus</a>] [<a href="#" class="text-blue-600 hover:underline">Course Website</a>]
+                        </p>
+                    </li>
+                    <li>
+                        **MA 510 - Partial Differential Equations (Fall 2025)**
+                        <p class="text-sm text-gray-600 ml-4">
+                            Covers classic PDEs (heat, wave, Laplace), boundary value problems, and solution techniques.
+                            [<a href="#" class="text-blue-600 hover:underline">Syllabus</a>]
+                        </p>
+                    </li>
+                </ul>
+            </section>
+
+            <section class="mb-8">
+                <h3 class="text-2xl font-bold text-gray-800 mb-4">
+                    Teaching Philosophy
+                </h3>
+                <p class="text-gray-700 leading-relaxed mb-4">
+                    My teaching philosophy centers on fostering a deep understanding of mathematical concepts through problem-solving and critical thinking. I believe in making complex ideas accessible by connecting them to intuitive examples and real-world applications, encouraging students to explore the beauty and power of mathematics.
+                </p>
+                <p class="text-gray-700 leading-relaxed">
+                    I strive to create an inclusive and supportive learning environment where students feel comfortable asking questions and engaging with challenging material. Active participation, collaborative learning, and regular feedback are key components of my courses.
+                </p>
+            </section>
+
+            <section>
+                <h3 class="text-2xl font-bold text-gray-800 mb-4">
+                    Resources for Students
+                </h3>
+                <ul class="list-disc list-inside text-gray-700 leading-relaxed space-y-2">
+                    <li>
+                        <a href="https://www.overleaf.com/" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:underline">Overleaf</a> - Online LaTeX editor for writing mathematical documents.
+                    </li>
+                    <li>
+                        <a href="https://www.wolframalpha.com/" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:underline">Wolfram Alpha</a> - Computational knowledge engine for quick math queries.
+                    </li>
+                    <li>
+                        <a href="https://www.khanacademy.org/math" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:underline">Khan Academy Mathematics</a> - Free online courses and practice exercises.
+                    </li>
+                </ul>
+            </section>
+        </div>
+
+        <!-- Research Page -->
+        <div id="research-page" class="page-content p-6 md:p-8 lg:p-10 bg-white rounded-lg shadow-md">
+            <h2 class="text-3xl font-semibold text-gray-800 mb-6 border-b-2 border-blue-600 pb-2">
+                Research
+            </h2>
+
+            <section class="mb-8">
+                <h3 class="text-2xl font-bold text-gray-800 mb-4">
+                    Research Interests
+                </h3>
+                <ul class="list-disc list-inside text-gray-700 leading-relaxed space-y-2">
+                    <li>Partial Differential Equations (PDEs)</li>
+                    <li>Functional Analysis and Operator Theory</li>
+                    <li>Numerical Methods for Differential Equations</li>
+                    <li>Mathematical Modeling in Biology and Physics</li>
+                    <li>Control Theory of Dynamical Systems</li>
+                </ul>
+            </section>
+
+            <section class="mb-8">
+                <h3 class="text-2xl font-bold text-gray-800 mb-4">
+                    Selected Publications
+                </h3>
+                <div class="space-y-6 text-gray-700 leading-relaxed">
+                    <!-- Publication 1 -->
+                    <div>
+                        <p class="font-semibold text-lg mb-1">
+                            On the existence of solutions for a class of non-linear Schrödinger equations
+                        </p>
+                        <p>
+                            [1] J. Doe, A. Smith, B. Chen. "On the existence of solutions for a class of non-linear Schrödinger equations," <span class="italic">Journal of Mathematical Physics</span>, Vol. 65, No. 3, pp. 033501, 2024.
+                        </p>
+                        <p class="text-sm text-gray-600 mt-2">
+                            <span class="font-bold">Abstract:</span> We investigate the existence and uniqueness of solutions for the non-linear Schrödinger equation with a potential term given by:
+                            $$-i \frac{\partial u}{\partial t} = -\frac{1}{2m} \nabla^2 u + V(x)u + \beta |u|^2 u$$
+                            where $u(x,t)$ is the complex-valued wave function, $V(x)$ is the potential, and $\beta$ is a real constant. Our approach uses variational methods in Sobolev spaces.
+                        </p>
+                        <a href="#" class="text-blue-600 hover:underline text-sm mt-1 block">
+                            [PDF]
+                        </a>
+                    </div>
+
+                    <!-- Publication 2 -->
+                    <div>
+                        <p class="font-semibold text-lg mb-1">
+                            Numerical stability of finite difference schemes for parabolic PDEs
+                        </p>
+                        <p>
+                            [2] J. Doe, L. Garcia. "Numerical stability of finite difference schemes for parabolic PDEs," <span class="italic">SIAM Journal on Numerical Analysis</span>, Vol. 60, No. 5, pp. 2800-2820, 2023.
+                        </p>
+                        <p class="text-sm text-gray-600 mt-2">
+                            <span class="font-bold">Abstract:</span> This paper analyzes the numerical stability of several explicit and implicit finite difference schemes for solving the one-dimensional heat equation:
+                            $$\frac{\partial u}{\partial t} = \alpha \frac{\partial^2 u}{\partial x^2}$$
+                            We demonstrate that stability conditions are governed by the Courant-Friedrichs-Lewy (CFL) condition for explicit methods, specifically $ \alpha \frac{\Delta t}{(\Delta x)^2} \le \frac{1}{2} $.
+                        </p>
+                        <a href="#" class="text-blue-600 hover:underline text-sm mt-1 block">
+                            [Preprint on arXiv]
+                        </a>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <!-- CV Page -->
+        <div id="cv-page" class="page-content p-6 md:p-8 lg:p-10 bg-white rounded-lg shadow-md">
+            <h2 class="text-3xl font-semibold text-gray-800 mb-6 border-b-2 border-blue-600 pb-2">
+                Curriculum Vitae
+            </h2>
+
+            <p class="text-gray-700 leading-relaxed mb-6 text-lg">
+                A comprehensive overview of my academic background, professional experience, research, and publications can be found in my full CV.
+            </p>
+
+            <div class="mb-8">
+                <a
+                    href="https://placehold.co/800x600/aabbcc/ffffff?text=Your+CV+PDF+Here"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="inline-block bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-6 rounded-lg shadow-lg transition duration-300 ease-in-out transform hover:scale-105 text-base sm:text-lg"
+                >
+                    Download Full CV (PDF)
+                </a>
+            </div>
+
+            <section class="mb-8">
+                <h3 class="text-2xl font-bold text-gray-800 mb-4">
+                    Abridged CV Highlights
+                </h3>
+                <div class="space-y-4 text-gray-700">
+                    <div>
+                        <h4 class="font-semibold text-xl mb-1">Education</h4>
+                        <ul class="list-disc list-inside ml-4 space-y-1">
+                            <li>Ph.D. in Mathematics, [University Name], [Year]</li>
+                            <li>M.Sc. in Mathematics, [University Name], [Year]</li>
+                            <li>B.Sc. in Mathematics, [University Name], [Year]</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h4 class="font-semibold text-xl mb-1">Academic Appointments</h4>
+                        <ul class="list-disc list-inside ml-4 space-y-1">
+                            <li>Professor, Department of Mathematics, [Current University], [Start Year] - Present</li>
+                            <li>Associate Professor, Department of Mathematics, [Previous University], [Start Year] - [End Year]</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h4 class="font-semibold text-xl mb-1">Research Interests</h4>
+                        <p>
+                            Partial Differential Equations, Functional Analysis, Numerical Methods, Mathematical Modeling.
+                        </p>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <!-- Personal Page -->
+        <div id="personal-page" class="page-content p-6 md:p-8 lg:p-10 bg-white rounded-lg shadow-md">
+            <h2 class="text-3xl font-semibold text-gray-800 mb-6 border-b-2 border-blue-600 pb-2">
+                Personal Interests
+            </h2>
+            <p class="text-gray-700 leading-relaxed mb-6 text-lg">
+                Beyond the world of theorems and equations, I enjoy [mention a hobby, e.g., hiking in national parks, playing classical guitar, or experimenting with new recipes].
+                I find that stepping away from academic pursuits and engaging in these activities helps me to clear my mind and often provides fresh perspectives when I return to my work.
+            </p>
+            <p class="text-gray-700 leading-relaxed">
+                One of my favorite pastimes is [mention another specific interest, e.g., reading historical fiction or exploring new coffee shops]. These personal interests allow me to maintain a balanced life and continually learn outside of my primary field.
+            </p>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white text-center p-4 mt-8 rounded-t-lg shadow-inner text-sm">
+        <p>&copy; <script>document.write(new Date().getFullYear())</script> Dr. [Your Name Here]. All rights reserved.</p>
+        <p>Contact: <a href="mailto:your.email@university.edu" class="text-blue-400 hover:underline">your.email@university.edu</a></p>
+    </footer>
+
+    <!-- JavaScript for page switching and MathJax -->
+    <script>
+        // Function to show the selected page and hide others
+        function showPage(pageId) {
+            const pages = document.querySelectorAll('.page-content');
+            pages.forEach(page => {
+                page.classList.remove('active');
+            });
+            document.getElementById(pageId + '-page').classList.add('active');
+
+            // Update active state for nav buttons
+            const navButtons = document.querySelectorAll('.nav-button');
+            navButtons.forEach(button => {
+                if (button.onclick.toString().includes(`showPage('${pageId}')`)) {
+                    button.classList.add('bg-blue-600', 'text-white', 'shadow-md');
+                    button.classList.remove('text-gray-300', 'hover:bg-gray-700', 'hover:text-white');
+                } else {
+                    button.classList.remove('bg-blue-600', 'text-white', 'shadow-md');
+                    button.classList.add('text-gray-300', 'hover:bg-gray-700', 'hover:text-white');
+                }
+            });
+
+            // Re-typeset MathJax when content changes
+            if (window.MathJax) {
+                window.MathJax.typesetPromise();
+            }
+        }
+
+        // Load MathJax script dynamically
+        function loadMathJax() {
+            const script = document.createElement('script');
+            script.src = 'https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js';
+            script.async = true;
+            document.head.appendChild(script);
+
+            script.onload = () => {
+                // Initial typesetting after MathJax loads and the page is ready
+                if (window.MathJax) {
+                    window.MathJax.startup.promise.then(() => {
+                        window.MathJax.typesetPromise();
+                    });
+                }
+            };
+        }
+
+        // Initialize on window load
+        window.onload = function() {
+            loadMathJax();
+            showPage('home'); // Show home page by default
+        };
+    </script>
+</body>
+</html>
